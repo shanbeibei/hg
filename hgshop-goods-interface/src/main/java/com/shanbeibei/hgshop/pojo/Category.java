@@ -1,43 +1,78 @@
 package com.shanbeibei.hgshop.pojo;
 
 import java.io.Serializable;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * 
- * @author shanbeibei
-  *鍒嗙被
+ * @author zhuzg
+ * 分类
+ * 
  */
-public class Category implements Serializable{
+public class Category  implements Serializable{
+	
+	
+	
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -5401575918676996649L;
-	private Integer id;
-	private Integer parentId; 
-	private String name;
-	private String path;
+	private static final long serialVersionUID = 132779590146042324L;
+	
+	private Integer id; // 
+	
+	private Integer parentId; // 上一级别分类的id  parent_id
+	
+	@JsonProperty("text")
+	private String name;//分类的名称
+	
+	
+	private String path;// 从根分类到当前分类的路径
+	
+	/**
+	 * 子节点的列表
+	 */
+	@JsonProperty("nodes")
+	private List<Category> children;// 从根分类到当前分类的路径
+	
+	
+	
+	public List<Category> getChildren() {
+		return children;
+	}
+	public void setChildren(List<Category> children) {
+		this.children = children;
+	}
 	public Integer getId() {
 		return id;
-	}
-	public Integer getParentId() {
-		return parentId;
-	}
-	public String getName() {
-		return name;
-	}
-	public String getPath() {
-		return path;
 	}
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	public Integer getParentId() {
+		return parentId;
+	}
 	public void setParentId(Integer parentId) {
 		this.parentId = parentId;
+	}
+	public String getName() {
+		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getPath() {
+		return path;
+	}
 	public void setPath(String path) {
 		this.path = path;
+	}
+	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", parentId=" + parentId + ", name=" + name + ", path=" + path + ", children="
+				+ children + "]";
 	}
 	@Override
 	public int hashCode() {
@@ -69,4 +104,8 @@ public class Category implements Serializable{
 		return true;
 	}
 	
+	
+
+	
+
 }

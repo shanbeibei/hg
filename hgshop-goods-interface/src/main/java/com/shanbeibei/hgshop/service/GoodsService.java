@@ -5,35 +5,70 @@ import java.util.List;
 import com.github.pagehelper.PageInfo;
 import com.shanbeibei.hgshop.pojo.Brand;
 import com.shanbeibei.hgshop.pojo.Category;
+import com.shanbeibei.hgshop.pojo.Sku;
+import com.shanbeibei.hgshop.pojo.Spu;
+import com.shanbeibei.hgshop.pojo.SpuVo;
 
 /**
  * 
- * @author shanbeibei
- *	****Dubbo æœåŠ¡æ¥å£å‡½æ•°å¿…é¡»è¦æœ‰è¿”å›å€¼
+ * @author zhuzg
+ *  
+ *  **** Dubbo ·şÎñ½Ó¿Úº¯Êı±ÈÒªÓĞ·ÇVoid µÄ·µ»ØÖµ********
+ *   
  */
-public interface GoodsService {
+public interface GoodsService { 
 	
- 	 int addBrand(Brand brand);
- 	 int updateBrand(Brand brand);
- 	 int deleteBrand(Integer id);
- 	 /**
- 	  * 
- 	  * @param firstChar é¦–å­—æ¯
- 	  * @param page é¡µç 
- 	  * @return
- 	  */
- 	 PageInfo<Brand> listBrand(String firstChar,int page);
- 	 
- 	 
- 	 int addCategory(Category category);
- 	 int updateCategory(Category category);
- 	 int deleteCategory(Integer id);
- 	 /**
- 	  * 
- 	  * @param firstChar é¦–å­—æ¯
- 	  * @param page é¡µç 
- 	  * @return
- 	  */
- 	 PageInfo<Category> listCategory(String firstChar,int page);
- 	 List<Category> treeCategory();
+	int addBrand(Brand brand);
+	int updateBrand(Brand brand);
+	int deleteBrand(Integer id);
+	/**
+	 * 
+	 * @param firstChar Ê××ÖÄ¸
+	 * @param page Ò³Âë
+	 * @return
+	 */
+	PageInfo<Brand> listBrand( String firstChar,int page); 
+	
+	
+	int addCategory(Category category);
+	int updateCategory(Category category);
+	int deleteCategory(Integer id);
+	/**
+	 * 
+	 * @param firstChar Ê××ÖÄ¸
+	 * @param page Ò³Âë
+	 * @return
+	 */
+	PageInfo<Category> listCategory( String firstChar,int page); 
+	/**
+	 * ÒÔÊ÷µÄĞÎÊ½ÏÔÊ¾ÁĞ±í
+	 * @return
+	 */
+	List<Category> treeCategory(); 
+	
+
+	// spuµÄ¹ÜÀí
+	PageInfo<Spu>  listSpu(int page,SpuVo vo);
+	int addSpu(Spu spu);
+	int updateSpu(Spu spu);
+	int deleteSpu(int id);
+	Spu getSpu(int id);
+	int deleteSpuBatch(int[] id);
+	
+	// skuµÄ¹ÜÀí
+	PageInfo<Sku>  listSku(int page,Sku sku);
+	int addSku(Sku sku);
+	Sku getSku(int id);//»ñÈ¡ÏêÇé
+	int updateSku(Sku sku);
+	int deleteSku(int id);
+	int deleteSkuBatch(int[] id);
+	List<Brand> getAllBrands();
+	/**
+	 * ¸ù¾İspu »ñÈ¡ËùÓĞµÄsku
+	 * @param page
+	 * @param sku
+	 * @return
+	 */
+	List<Sku> listSkuBySpu(int spuId);
+
 }

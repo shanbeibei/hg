@@ -103,7 +103,7 @@
 				<configuration>
 					<httpConnector>
 						<!-- 端口号 -->
-						<port>9090</port>
+						<port>9092</port>
 						<!-- 项目访问路径 -->
 						<host>localhost</host>
 					</httpConnector>
