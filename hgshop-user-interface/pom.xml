@@ -7,7 +7,6 @@
   </parent>
   <artifactId>hgshop-user-interface</artifactId>
     <dependencies>
-    <!--  -->
   <!-- 引入mybaits pagehelper分页助手依赖 -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
