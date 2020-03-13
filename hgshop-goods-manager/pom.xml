@@ -8,6 +8,7 @@
   <artifactId>hgshop-goods-manager</artifactId>
   <packaging>war</packaging>
 <dependencies>
+	<!-- s -->
 		<dependency>
 			<groupId>com.github.pagehelper</groupId>
 			<artifactId>pagehelper</artifactId>

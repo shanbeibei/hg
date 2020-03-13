@@ -7,9 +7,7 @@ import java.io.Serializable;
   *品牌
  */
 public class Brand implements Serializable{
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 4165988551162438246L;
 	private Integer id;
 	private String name;

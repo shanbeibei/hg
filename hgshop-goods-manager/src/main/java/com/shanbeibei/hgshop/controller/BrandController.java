@@ -19,7 +19,7 @@ import com.shanbeibei.hgshop.service.BrandService;
 @Controller
 @RequestMapping("brand")
 public class BrandController {
-	
+//	s
 	@Reference
 	BrandService brandService;
 	

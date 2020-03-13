@@ -8,7 +8,7 @@
   <artifactId>hgshop-goods-service</artifactId>
   <packaging>war</packaging>
   <dependencies>
-  	
+  	<!-- s -->
 	<dependency>
 		<groupId>com.shanbeibei.hgshop</groupId>
 		<artifactId>hgshop-goods-interface</artifactId>

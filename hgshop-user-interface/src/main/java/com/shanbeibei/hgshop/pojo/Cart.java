@@ -12,7 +12,9 @@ public class Cart implements Serializable{
 	/**
 	 * 
 	 */
-	
+	/**
+	 * 
+	 */
 	private Integer  id;
 	private int uid;
 	private int  skuid;

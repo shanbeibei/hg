@@ -11,6 +11,9 @@ import org.springframework.context.annotation.PropertySource;
 @Configuration
 @PropertySource("classpath:hgshop-admin.peoperties")
 public class AdminProperties{
+	/**
+	 * 
+	 */
 	@Value("${admin.name}")
 	String adminName;
 	@Value("${admin.pwd}")
